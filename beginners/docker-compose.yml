@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  ubuntu:
+    build: .
+    volumes:
+    - ./files:/files
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash
+    cap_add:
+      - SYS_PTRACE
+volumes:
+  files: {}
